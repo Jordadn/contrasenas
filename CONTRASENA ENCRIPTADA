@@ -1,0 +1,11 @@
+CAMBIAR UNA CONTRASEÑA A LA FUERZA
+ $datos['contrasena'] = 'JAJAJA';
+ 
+ 
+ CAMBIAR UNA CONTRASEÑA ENCRIPTADA
+ unction registrar(Request $request){
+        $datos = $request->all();
+        $datos['contrasena'] = sha1 ($datos['contrasena']);
+        Usuario::create($datos);
+        return 'Se registro correctamente';
+       }
